@@ -1,4 +1,4 @@
-package dentsOasis;
+package DentsOasis;
 
 public class Review
 {
