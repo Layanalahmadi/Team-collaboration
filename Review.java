@@ -3,18 +3,16 @@ package DentsOasis;
 public class Review
 {
     private Dentist dentist;
-    private Patient patient;
-    private String comments;
+    private String feedback;
     private int rate;
     
     public Review() {
     	
     }
-    public Review(Dentist dentist, Patient patient, int rating, String comments){
-        this.setDentist(dentist);
-        this.setPatient(patient);
-        this.setRate(rating);
-        this.setComments(comments);
+    public Review(Dentist dentist, int rate, String feedback){
+        this.dentist = dentist;
+        this.rate = rate;
+        this.setFeedback(feedback);
     }
 
     public Dentist getDentist(){
@@ -23,14 +21,20 @@ public class Review
     public void setDentist(Dentist dentist){
         this.dentist = dentist;
     }
-    public Patient getPatient(){
-        return patient;
+   
+    public int getRate(){
+        return rate;
     }
-    public void setPatient(Patient patient){
-        this.patient = patient;
+    public void setRate(int rate){
+        this.rate = rate;
     }
-    public String getComments(){
-        return comments;
+	public String getFeedback() {
+		return feedback;
+	}
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+}
     }
     public void setComments(String comments){
         this.comments = comments;
