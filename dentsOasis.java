@@ -1,5 +1,3 @@
-package dentsOasis;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -112,11 +110,12 @@ public class dentsOasis
                 dentist10.addAppointment(appointment28); 
                 dentist10.addAppointment(appointment29);   
 
-           
-                System.out.println("\n\t********* Welcome to the DentsOasis *********");
-                System.out.println();
-                
-                    	System.out.println("\n    *** PATIENT PAGE ***");
+                System.out.println("\n\n\t*****************************************************************************");
+                System.out.println( "\t××××××××××                WELCOME TO THE DENTSOASIS!!              ××××××××××");
+                System.out.println("\t*****************************************************************************\n");
+
+
+                    	System.out.println("\n    *** PATIENT PAGE  ***");
                         System.out.println("*** Choose the following ***");
                         System.out.println("1. Login");
                         System.out.println("2. Register");
@@ -131,42 +130,45 @@ public class dentsOasis
                         switch (select) {
                             case 1:
                                 if(loginPatient()!= true) 
-                                    System.out.println("not found");
+                                    System.out.println("\n>> Not found");
 
                                 else 
                                 {
-                                  while(true) {
-                                System.out.println("\n    *** PATIENT MENU ***");
-                                System.out.println("1. Search for Dentist");
-                                System.out.println("2. Book an Appointment");
-                                System.out.println("3. Cancel an Appointment");
-                                System.out.println("4. Reviews");
-                                System.out.println("5. Exit");
-                                System.out.print(">> Enter your choice: ");
-                                int choice = scanner.nextInt();
-                                scanner.nextLine();
+                                  while(true)
+                                  {
+                                      System.out.println("\n--------------------------");
+                                      System.out.println("    *** PATIENT MENU ***");
+                                      System.out.println("1. Search for Dentist");
+                                      System.out.println("2. Book an Appointment");
+                                      System.out.println("3. Cancel an Appointment");
+                                      System.out.println("4. Reviews");
+                                      System.out.println("5. Exit");
+                                      System.out.println("--------------------------");
+                                      System.out.print(">> Enter your choice: ");
+                                      int choice = scanner.nextInt();
+                                      scanner.nextLine();
 
-                                switch (choice) 
-                                {
-                                case 1:
+                                      switch (choice)
+                                      {
+                                          case 1:
                                     
-                                    System.out.print("\nEnter city: ");
-                                    String city = scanner.nextLine();
+                                          System.out.print("\nEnter city: ");
+                                          String city = scanner.nextLine();
                                     
-                                    System.out.print("Enter specialty: ");
-                                    String specialty = scanner.nextLine();
+                                          System.out.print("Enter specialty: ");
+                                          String specialty = scanner.nextLine();
                                     
-                                    //call search method
-                                    List<Dentist> searchResults = searchDents(city, specialty, dentists);
-                                    
-                                    if (searchResults.isEmpty()) 
-                                    {
-                                        System.out.println("Not found.");
-                                        return;
-                                    }
+                                          //call search method
+                                          List<Dentist> searchResults = searchDents(city, specialty, dentists);
+                                          
+                                          if (searchResults.isEmpty()) 
+                                          {
+                                              System.out.println("\n>> Not found.");
+                                              return;
+                                          }
 
-                                    // display the search results
-                                    System.out.print("\n>> Search results:");
+                                          // display the search results
+                                          System.out.print("\n>> Search results:");
                                     
                                     for (int i = 0; i < searchResults.size(); i++) {
                                         System.out.println();
@@ -245,7 +247,7 @@ public class dentsOasis
                                     }                                        	                                        	
                                     
                                     else {
-                                    System.out.println("\nView patients feedback.\n");
+                                    System.out.println("\n>> View patients feedback.\n");
 
                                                     
                                         	    if (Reviews.isEmpty())
@@ -256,10 +258,10 @@ public class dentsOasis
                                         	        int count = 1;
                                         	        for(Review review : Reviews)
                                                         {
-                                        	            System.out.println("----------" +"Review " + count + "----------");
-                                        	            System.out.println("Dentist: " + review.getDentist().getName());
-                                        	            System.out.println("Review: " + review.getFeedback());
-                                        	            System.out.println("Rating: " + review.getRate());
+                                        	            System.out.println("\t----------" +"Review " + count + "----------");
+                                        	            System.out.println("\tDentist: " + review.getDentist().getName());
+                                        	            System.out.println("\tReview: " + review.getFeedback());
+                                        	            System.out.println("\tRating: " + review.getRate());
                                         	            count++;
 
                                         	        }
@@ -352,7 +354,7 @@ public class dentsOasis
  	 			   System.out.println("Enter your username : ");
  	 			   patient.setUsername(keyboard.nextLine()); 
  	 			   if (isValidUsername(patient.getUsername()) != true) {
- 	 				 System.out.println("Please Try again ");
+ 	 				 System.out.println(">> Please Try again ");
  	 	 			   System.out.println("Enter valid username : ");
  	 	 			   patient.setUsername(keyboard.nextLine()); 
  	 			   }
@@ -361,7 +363,7 @@ public class dentsOasis
  	 			   
  	 			   
  	 			 if (isValidPassword(patient.getPassword()) != true) {
- 	 				 System.out.println("Please Try again ");
+ 	 				 System.out.println(">> Please Try again ");
  	 	 			   System.out.println("Enter valid password : ");
  	 	 				 System.out.println("Should contains numbers, special character,  and length between 8 to 10 ");
 
@@ -372,14 +374,14 @@ public class dentsOasis
  	 			   patient.setPhoneNumber(keyboard.nextLine()); 
  	 			   
  	 			 if (isValidPhoneeNumber(patient.getPhoneNumber()) != true) {
- 	 				 System.out.println("Please Try again ");
+ 	 				 System.out.println(">> Please Try again ");
  	 	 			   System.out.println("Enter valid phone number : ");
  	 	 			   patient.setPhoneNumber(keyboard.nextLine()); 
  	 			   }
  	 			   System.out.println("Enter your email : ");
  	 			   patient.setEmail(keyboard.nextLine()); 
  	 			 if (isValidEmail(patient.getEmail()) != true) {
- 	 				 System.out.println("Please Try again ");
+ 	 				 System.out.println(">> Please Try again ");
  	 	 			   System.out.println("Enter valid email : ");
  	 	 			   patient.setEmail(keyboard.nextLine()); 
  	 			   }
@@ -393,7 +395,7 @@ public class dentsOasis
                            print.print(patient.getUsername()+ "," +  patient.getPassword() + "," + 
                                    patient.getPhoneNumber() + "," + patient.getEmail() + "," +
                                    patient.getCity()+ ",\n");
-                           System.out.println(" Successful registration ");
+                           System.out.println(">> Successful registration ");
                            print.close();
                    }
                    catch (IOException e) {
