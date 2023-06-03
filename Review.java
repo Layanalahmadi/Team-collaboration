@@ -9,40 +9,33 @@ public class Review
     public Review() {
     	
     }
-    public Review(Dentist dentist, int rate, String feedback){
+    public Review(Dentist dentist, int rate, String feedback)
+    {
         this.dentist = dentist;
         this.rate = rate;
         this.setFeedback(feedback);
     }
-
+    
     public Dentist getDentist(){
         return dentist; 
     }
-    public void setDentist(Dentist dentist){
+    public void setDentist(Dentist dentist)
+    {
         this.dentist = dentist;
     }
-   
     public int getRate(){
         return rate;
     }
-    public void setRate(int rate){
+    public void setRate(int rate)
+    {
         this.rate = rate;
     }
-	public String getFeedback() {
-		return feedback;
-	}
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
-}
+    public String getFeedback()
+    {
+        return feedback;
     }
-    public void setComments(String comments){
-        this.comments = comments;
-    }
-    public int getRate(){
-        return rate;
-    }
-    public void setRate(int rate){
-        this.rate = rate;
+    public void setFeedback(String feedback)
+    {
+        this.feedback = feedback;
     }
 }
